@@ -195,6 +195,24 @@ export default function ResultsPage() {
 
   const diet = mealData[dietType as keyof typeof mealData]
 
+  if (!diet) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-muted-foreground">Diet plan not found. Please try again.</p>
+          <Link href="/symptoms">
+            <Button className="mt-4">Go Back</Button>
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  // Get meal times (excluding title, description, icon, color)
+  const mealTimes = Object.keys(diet).filter(key => 
+    !['title', 'description', 'icon', 'color'].includes(key)
+  )
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -263,47 +281,50 @@ export default function ResultsPage() {
           </motion.div>
 
           <motion.div variants={container} initial="hidden" animate="show" className="space-y-12">
-            {Object.entries(diet.meals).map(([mealTime, options]) => (
-              <motion.section key={mealTime} variants={item} className="space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="p-2 rounded-full bg-primary/10 text-primary">
-                      {mealIcons[mealTime as keyof typeof mealIcons]}
+            {mealTimes.map((mealTime) => {
+              const mealData = diet[mealTime as keyof typeof diet] as any
+              return (
+                <motion.section key={mealTime} variants={item} className="space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 rounded-full bg-primary/10 text-primary">
+                        {mealIcons[mealTime as keyof typeof mealIcons]}
+                      </div>
+                      <h2 className="text-2xl font-bold">{mealTime}</h2>
                     </div>
-                    <h2 className="text-2xl font-bold">{mealTime}</h2>
+                    <div className="flex items-center text-sm text-muted-foreground ml-9 sm:ml-0">
+                      <Clock className="h-4 w-4 mr-1" />
+                      <span>{mealData.timing}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center text-sm text-muted-foreground ml-9 sm:ml-0">
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>{diet.timings[mealTime as keyof typeof diet.timings]}</span>
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-3 gap-4">
-                  {options.map((meal, index) => (
-                    <motion.div
-                      key={index}
-                      className="bg-card rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-                      whileHover={{ y: -5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="p-4 border-b">
-                        <h3 className="font-medium">Option {index + 1}</h3>
-                      </div>
-                      <div className="p-4">
-                        <ul className="space-y-2">
-                          {meal.map((item, itemIndex) => (
-                            <li key={itemIndex} className="flex items-start gap-2">
-                              <span className="text-primary mt-1">•</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.section>
-            ))}
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {mealData.options.map((meal: string[], index: number) => (
+                      <motion.div
+                        key={index}
+                        className="bg-card rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                        whileHover={{ y: -5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="p-4 border-b">
+                          <h3 className="font-medium">Option {index + 1}</h3>
+                        </div>
+                        <div className="p-4">
+                          <ul className="space-y-2">
+                            {meal.map((item, itemIndex) => (
+                              <li key={itemIndex} className="flex items-start gap-2">
+                                <span className="text-primary mt-1">•</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.section>
+              )
+            })}
           </motion.div>
 
           <motion.div
