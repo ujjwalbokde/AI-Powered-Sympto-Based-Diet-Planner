@@ -13,41 +13,7 @@ import { Utensils, ArrowLeft, Coffee, UtensilsCrossed, Cookie, Leaf, Wheat, Appl
 const mealData = {
   "high-fiber": {
     title: "High Fiber Diet",
-    description: "Rich in dietary fiber to support digestion and gut health",
-    icon: <Leaf className="h-6 w-6" />,
-    timings: {
-      Breakfast: "7:00 AM - 9:00 AM",
-      Lunch: "12:30 PM - 2:00 PM",
-      Dinner: "7:00 PM - 8:30 PM",
-      Snacks: "10:30 AM & 4:30 PM"
-    },
-    meals: {
-      "Breakfast": [
-        ["Oats porridge with chia seeds", "Banana", "Almond milk"],
-        ["Vegetable upma", "Coconut chutney", "Lemon water"],
-        ["Whole wheat spinach paratha", "Curd", "Guava slices"]
-      ],
-      "Lunch": [
-        ["Brown rice", "Rajma", "Cabbage salad"],
-        ["Whole wheat roti", "Mixed vegetable sabzi", "Cucumber raita"],
-        ["Bajra roti", "Chole", "Beetroot salad"]
-      ],
-      "Dinner": [
-        ["Dalia khichdi with vegetables", "Mint chutney", "Curd"],
-        ["Whole wheat roti", "Lauki sabzi", "Moong dal"],
-        ["Vegetable oats khichdi", "Carrot stir-fry", "Buttermilk"]
-      ],
-      "Snacks": [
-        ["Roasted chana", "Apple", "Herbal tea"],
-        ["Multigrain crackers", "Guava", "Coconut water"],
-        ["Makhana", "Orange slices", "Lemon-infused water"]
-      ]
-    }
-  },
-
-  "high-protein": {
-    title: "High Protein Diet",
-    description: "Protein-rich meals to support muscle growth and repair",
+    description: "A diet rich in fiber to improve digestion and gut health.",
     icon: <Wheat className="h-6 w-6" />,
     color: "from-amber-500 to-yellow-600",
     Breakfast: {
@@ -56,6 +22,8 @@ const mealData = {
         ["Oats porridge with fruits", "Whole grain toast with avocado", "Green tea"],
         ["Ragi dosa with sambar", "Mixed fruit bowl", "Buttermilk"],
         ["Whole wheat upma with vegetables", "Sprouts salad", "Lemon water"],
+        ["Vegetable dalia", "Papaya cubes", "Herbal tea"],
+        ["Methi thepla with curd", "Apple slices", "Coconut water"]
       ],
     },
     Lunch: {
@@ -64,6 +32,8 @@ const mealData = {
         ["Brown rice with dal", "Mixed vegetable curry", "Cucumber raita", "Salad"],
         ["Whole wheat roti", "Rajma curry", "Spinach poriyal", "Buttermilk"],
         ["Multigrain khichdi", "Kadhi", "Beetroot poriyal", "Vegetable salad"],
+        ["Jowar roti", "Chana masala", "Bhindi sabzi", "Mint chutney"],
+        ["Bajra roti", "Baingan bharta", "Cabbage stir-fry", "Tomato rasam"]
       ],
     },
     Dinner: {
@@ -72,6 +42,8 @@ const mealData = {
         ["Multigrain roti", "Vegetable curry", "Dal", "Salad"],
         ["Barley soup", "Vegetable khichdi", "Cucumber raita"],
         ["Whole wheat dosa", "Vegetable curry", "Sprouts salad"],
+        ["Oats roti", "Moong dal", "Pumpkin sabzi"],
+        ["Broken wheat upma", "Carrot-beans poriyal", "Mint buttermilk"]
       ],
     },
     Snacks: {
@@ -80,13 +52,15 @@ const mealData = {
         ["Roasted chana", "Fresh fruits"],
         ["Vegetable soup", "Multigrain crackers"],
         ["Fruit smoothie with flax seeds", "Nuts"],
+        ["Sprouted moong chaat", "Buttermilk"],
+        ["Roasted makhana", "Guava slices"]
       ],
     },
   },
 
   "low-carb": {
     title: "Low Carb Diet",
-    description: "Reduced carbohydrate intake for metabolic health",
+    description: "A diet low in carbohydrates to help manage blood sugar levels.",
     icon: <Leaf className="h-6 w-6" />,
     color: "from-green-500 to-emerald-600",
     Breakfast: {
@@ -95,6 +69,8 @@ const mealData = {
         ["Paneer bhurji", "Vegetable omelette", "Green tea"],
         ["Sprouts salad", "Boiled eggs", "Buttermilk"],
         ["Vegetable upma with less rice", "Coconut chutney", "Herbal tea"],
+        ["Besan chilla", "Mint chutney", "Lemon water"],
+        ["Egg bhurji", "Cucumber slices", "Tulsi tea"]
       ],
     },
     Lunch: {
@@ -103,6 +79,8 @@ const mealData = {
         ["Grilled paneer", "Vegetable curry", "Cucumber salad"],
         ["Tandoori chicken", "Palak paneer", "Raita"],
         ["Fish curry", "Cauliflower rice", "Mixed vegetable salad"],
+        ["Soya chunk curry", "Bhindi sabzi", "Boiled egg"],
+        ["Chicken sukka", "Lauki sabzi", "Kokum water"]
       ],
     },
     Dinner: {
@@ -111,6 +89,8 @@ const mealData = {
         ["Stir-fried vegetables", "Grilled fish", "Cucumber raita"],
         ["Chicken soup", "Vegetable salad with paneer", "Buttermilk"],
         ["Egg curry", "Stir-fried vegetables", "Cucumber salad"],
+        ["Paneer tikka", "Methi stir-fry", "Tomato soup"],
+        ["Tandoori mushroom", "Boiled moong salad", "Lemon water"]
       ],
     },
     Snacks: {
@@ -119,9 +99,12 @@ const mealData = {
         ["Roasted peanuts", "Cucumber sticks"],
         ["Paneer tikka", "Coconut water"],
         ["Boiled eggs", "Vegetable soup"],
+        ["Spiced fox nuts (makhana)", "Green tea"],
+        ["Almonds", "Masala buttermilk"]
       ],
     },
   },
+
   balanced: {
     title: "Balanced Diet",
     description: "A well-balanced diet with all essential nutrients for overall health.",
@@ -133,6 +116,8 @@ const mealData = {
         ["Idli with sambar", "Coconut chutney", "Fresh fruits"],
         ["Vegetable poha", "Sprouts salad", "Buttermilk"],
         ["Paratha with curd", "Vegetable curry", "Fresh fruit juice"],
+        ["Upma with coconut chutney", "Banana", "Tulsi tea"],
+        ["Aloo paratha", "Curd", "Mint chutney"]
       ],
     },
     Lunch: {
@@ -141,6 +126,8 @@ const mealData = {
         ["Rice", "Dal", "Vegetable curry", "Curd", "Salad"],
         ["Roti", "Chicken curry", "Vegetable poriyal", "Buttermilk"],
         ["Rice", "Sambar", "Vegetable curry", "Raita", "Papad"],
+        ["Roti", "Mutter paneer", "Bhindi fry", "Lassi"],
+        ["Jeera rice", "Rajma", "Beetroot salad", "Plain curd"]
       ],
     },
     Dinner: {
@@ -149,6 +136,8 @@ const mealData = {
         ["Roti", "Dal", "Vegetable curry", "Salad"],
         ["Vegetable pulao", "Raita", "Papad"],
         ["Roti", "Fish curry", "Vegetable poriyal", "Buttermilk"],
+        ["Khichdi", "Ghee tadka", "Carrot cucumber salad"],
+        ["Lauki chana dal", "Phulka", "Mint chutney"]
       ],
     },
     Snacks: {
@@ -157,6 +146,8 @@ const mealData = {
         ["Fresh fruits", "Nuts"],
         ["Vegetable sandwich", "Buttermilk"],
         ["Dhokla", "Green chutney", "Herbal tea"],
+        ["Fruit chaat", "Lemon water"],
+        ["Corn chaat", "Spiced lassi"]
       ],
     },
   },
