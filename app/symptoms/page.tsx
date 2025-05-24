@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState, useMemo } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { ModeToggle } from "@/components/mode-toggle"
-import { BackToTop } from "@/components/back-to-top"
-import { useToast } from "@/components/ui/use-toast"
-import { useRouter } from "next/navigation"
-import { motion } from "framer-motion"
-import { ArrowRight, Utensils, X, Search, Loader2 } from "lucide-react"
+import { useState, useMemo } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { ModeToggle } from "@/components/mode-toggle";
+import { BackToTop } from "@/components/back-to-top";
+import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { ArrowRight, Utensils, X, Search, Loader2 } from "lucide-react";
 
 // List of symptoms from the provided JSON
 const allSymptoms = [
@@ -417,39 +417,41 @@ const allSymptoms = [
   "weight gain",
   "hot flush",
   "blackout",
-]
+];
 
 export default function SymptomsPage() {
-  const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([])
-  const [searchQuery, setSearchQuery] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-  const { toast } = useToast()
-  const router = useRouter()
+  const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+  const router = useRouter();
 
   // Filter symptoms based on search query
   const filteredSymptoms = useMemo(() => {
-    if (!searchQuery.trim()) return allSymptoms
-    return allSymptoms.filter((symptom) => symptom.toLowerCase().includes(searchQuery.toLowerCase()))
-  }, [searchQuery])
+    if (!searchQuery.trim()) return allSymptoms;
+    return allSymptoms.filter((symptom) =>
+      symptom.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery]);
 
   const handleSymptomClick = (symptom: string) => {
     if (selectedSymptoms.includes(symptom)) {
       // Already selected, do nothing
-      return
+      return;
     }
 
-    setSelectedSymptoms([...selectedSymptoms, symptom])
+    setSelectedSymptoms([...selectedSymptoms, symptom]);
 
     toast({
       title: "Symptom Added",
       description: `${symptom} has been added to your list.`,
       duration: 1500,
-    })
-  }
+    });
+  };
 
   const removeSymptom = (symptom: string) => {
-    setSelectedSymptoms(selectedSymptoms.filter((s) => s !== symptom))
-  }
+    setSelectedSymptoms(selectedSymptoms.filter((s) => s !== symptom));
+  };
 
   const handleSubmit = async () => {
     if (selectedSymptoms.length === 0) {
@@ -457,54 +459,55 @@ export default function SymptomsPage() {
         title: "No symptoms selected",
         description: "Please select at least one symptom to continue.",
         variant: "destructive",
-      })
-      return
+      });
+      return;
     }
 
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
-      // In a real app, this would be a fetch to your FastAPI endpoint
-      // For this example, we'll simulate the API call
+      const response = await fetch("/api/recommend-diet", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          accept: "application/json",
+        },
+        body: JSON.stringify({
+          symptoms: selectedSymptoms,
+          age: 20,
+          bmi: 20,
+          gender: "Male",
+        }),
+      });
 
-      // const response = await fetch('/api/predict', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     symptoms: selectedSymptoms,
-      //   }),
-      // });
+      if (!response.ok) {
+        throw new Error("Failed to fetch response from server");
+      }
 
-      // const data = await response.json();
+      const data = await response.json();
+      const dietType = data?.recommended_diet?.diet_type;
 
-      // Simulate API response delay
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      if (!dietType) {
+        throw new Error("No diet type returned from server");
+      }
 
-      // Simulate API response
-      const dietType = selectedSymptoms.some((s) => s.includes("diabetes") || s.includes("hypertension"))
-        ? "low-carb"
-        : selectedSymptoms.some((s) => s.includes("constipation") || s.includes("indigestion"))
-          ? "high-fiber"
-          : "balanced"
-
-      // Store the diet type in localStorage to access it on the results page
-      localStorage.setItem("dietType", dietType)
+      // Store the diet type in localStorage
+      localStorage.setItem("dietType", dietType);
 
       // Navigate to results page
-      router.push("/results")
+      router.push("/results");
     } catch (error) {
-      console.error("Error:", error)
+      console.error("Error:", error);
       toast({
         title: "Error",
-        description: "There was an error processing your request. Please try again.",
+        description:
+          "There was an error processing your request. Please try again.",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const container = {
     hidden: { opacity: 0 },
@@ -514,12 +517,12 @@ export default function SymptomsPage() {
         staggerChildren: 0.05,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -531,7 +534,7 @@ export default function SymptomsPage() {
         <ModeToggle />
       </header>
 
-      <main className="flex-1 container mx-auto px-4 py-8">
+      <main className="flex-1 container mx-auto px-4 py-8 ">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -539,9 +542,12 @@ export default function SymptomsPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Select Your Symptoms</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              Select Your Symptoms
+            </h1>
             <p className="text-muted-foreground mb-6">
-              Click on the symptoms you're experiencing to get a personalized diet plan.
+              Click on the symptoms you're experiencing to get a personalized
+              diet plan.
             </p>
           </motion.div>
 
@@ -552,28 +558,56 @@ export default function SymptomsPage() {
               animate={{ opacity: 1, height: "auto" }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="text-sm font-medium mb-3">Selected Symptoms:</h2>
-              <div className="flex flex-wrap gap-2">
-                {selectedSymptoms.map((symptom) => (
-                  <div
-                    key={symptom}
-                    className="flex items-center bg-primary/10 text-primary rounded-full px-3 py-1 text-sm"
+              <div className="flex flex-col">
+                <div className="flex justify-between items-center mb-3">
+                  <h2 className="text-sm font-medium">Selected Symptoms:</h2>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
                   >
-                    {symptom}
-                    <button
-                      onClick={() => removeSymptom(symptom)}
-                      className="ml-2 hover:bg-primary/20 rounded-full p-1"
+                    <Button
+                      onClick={handleSubmit}
+                      size="lg"
+                      className="rounded-full px-8"
+                      disabled={isLoading}
                     >
-                      <X className="h-3 w-3" />
-                      <span className="sr-only">Remove {symptom}</span>
-                    </button>
-                  </div>
-                ))}
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          Generate Diet-Plan <ArrowRight className="ml-2 h-4 w-4" />
+                        </>
+                      )}
+                    </Button>
+                  </motion.div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {selectedSymptoms.map((symptom) => (
+                    <div
+                      key={symptom}
+                      className="flex items-center bg-primary/10 text-primary rounded-full px-3 py-1 text-sm"
+                    >
+                      {symptom}
+                      <button
+                        onClick={() => removeSymptom(symptom)}
+                        className="ml-2 hover:bg-primary/20 rounded-full p-1"
+                      >
+                        <X className="h-3 w-3" />
+                        <span className="sr-only">Remove {symptom}</span>
+                      </button>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           )}
 
-          <div className="mb-6">
+          <div className="mb-6 ">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
@@ -599,7 +633,7 @@ export default function SymptomsPage() {
             variants={container}
             initial="hidden"
             animate="show"
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-h-[60vh] overflow-y-auto pr-2"
+            className="pb-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-h-[60vh] overflow-y-auto pr-2"
           >
             {filteredSymptoms.length > 0 ? (
               filteredSymptoms.map((symptom) => (
@@ -622,36 +656,18 @@ export default function SymptomsPage() {
               </div>
             )}
           </motion.div>
-
-          <motion.div
-            className="mt-8 flex justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <Button onClick={handleSubmit} size="lg" className="rounded-full px-8" disabled={isLoading}>
-              {isLoading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Processing...
-                </>
-              ) : (
-                <>
-                  Next <ArrowRight className="ml-2 h-5 w-5" />
-                </>
-              )}
-            </Button>
-          </motion.div>
         </div>
       </main>
 
       <footer className="border-t py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} AI Diet Planner. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} AI Diet Planner. All rights reserved.
+          </p>
         </div>
       </footer>
 
       <BackToTop />
     </div>
-  )
+  );
 }
