@@ -23,24 +23,24 @@ const mealData = {
     },
     meals: {
       "Breakfast": [
-        ["Oats porridge with chia seeds", "Banana", "Almond milk"],
-        ["Vegetable upma", "Coconut chutney", "Lemon water"],
-        ["Whole wheat spinach paratha", "Curd", "Guava slices"]
+        ["Oats porridge with chia seeds", "Banana", "Badam milk"],
+        ["Vegetable upma", "Nariyal chutney", "Nimbu pani"],
+        ["Bajra roti with methi sabzi", "Dahi", "Papaya"]
       ],
       "Lunch": [
-        ["Brown rice", "Rajma", "Cabbage salad"],
-        ["Whole wheat roti", "Mixed vegetable sabzi", "Cucumber raita"],
-        ["Bajra roti", "Chole", "Beetroot salad"]
+        ["Brown rice", "Rajma curry", "Kobi salad"],
+        ["Jowar roti", "Mix veg sabzi", "Kakdi raita"],
+        ["Bajra roti", "Chana masala", "Chukandar salad"]
       ],
       "Dinner": [
-        ["Dalia khichdi with vegetables", "Mint chutney", "Curd"],
-        ["Whole wheat roti", "Lauki sabzi", "Moong dal"],
-        ["Vegetable oats khichdi", "Carrot stir-fry", "Buttermilk"]
+        ["Dalia khichdi with veggies", "Pudina chutney", "Chaas"],
+        ["Missi roti", "Lauki ki sabzi", "Moong dal"],
+        ["Vegetable oats", "Gajar sabzi", "Mattha"]
       ],
       "Snacks": [
-        ["Roasted chana", "Apple", "Herbal tea"],
-        ["Multigrain crackers", "Guava", "Coconut water"],
-        ["Makhana", "Orange slices", "Lemon-infused water"]
+        ["Bhuna chana", "Apple", "Tulsi chai"],
+        ["Multigrain khakhra", "Amrood", "Nariyal pani"],
+        ["Makhana", "Orange", "Ajwain water"]
       ]
     }
   },
@@ -57,24 +57,24 @@ const mealData = {
     },
     meals: {
       "Breakfast": [
-        ["Moong dal chilla with paneer", "Mint chutney", "Black tea"],
-        ["Sprouts salad", "Boiled eggs", "Lemon juice"],
-        ["Tofu bhurji", "Multigrain toast", "Soy milk"]
+        ["Moong dal chilla with paneer", "Pudina chutney", "Kali chai"],
+        ["Sprouts chaat", "Boiled Eggs", "Nimbu shikanji"],
+        ["Soya bhurji", "Multigrain toast", "Soya milk"]
       ],
       "Lunch": [
-        ["Grilled chicken curry", "Quinoa", "Spinach soup"],
+        ["Tandoori chicken", "Quinoa pulao", "Palak soup"],
         ["Paneer tikka", "Brown rice", "Masoor dal"],
-        ["Soyabean curry", "Whole wheat roti", "Mixed veg sabzi"]
+        ["Soya chunks curry", "Bajra roti", "Mix veg"]
       ],
       "Dinner": [
-        ["Egg bhurji", "Vegetable soup", "Chapati"],
-        ["Soyabean bhurji", "Carrot-peas stir-fry", "Roti"],
-        ["Tofu curry", "Palak dal", "Cauliflower sabzi"]
+        ["Egg curry", "Vegetable soup", "Phulka"],
+        ["Soya bhurji", "Matar-gajar sabzi", "Roti"],
+        ["Tofu curry", "Palak dal", "Gobhi sabzi"]
       ],
       "Snacks": [
-        ["Roasted soy nuts", "Buttermilk", "Peanut chikki"],
-        ["Greek yogurt", "Walnuts", "Carrot sticks"],
-        ["Boiled eggs", "Sprout chaat", "Lemon water"]
+        ["Bhuna soya", "Chaas", "Mungfali chikki"],
+        ["Greek dahi", "Akhrot", "Gajar sticks"],
+        ["Boiled Eggs", "Sprout chaat", "Nimbu pani"]
       ]
     }
   },
@@ -91,24 +91,24 @@ const mealData = {
     },
     meals: {
       "Breakfast": [
-        ["Watermelon juice", "Poha", "Coconut water"],
-        ["Cucumber sandwich", "Mint tea", "Apple"],
+        ["Tarbuj juice", "Poha", "Nariyal pani"],
+        ["Kheera sandwich", "Pudina chai", "Seb"],
         ["Vegetable dalia", "Mosambi juice", "Curd"]
       ],
       "Lunch": [
-        ["Moong dal", "Lauki curry", "Cucumber raita"],
-        ["Steamed rice", "Kadhi", "Tomato-onion salad"],
-        ["Jeera rice", "Mint chutney", "Coconut water"]
+        ["Moong dal", "Lauki ki sabzi", "Kakdi raita"],
+        ["Steamed rice", "Kadhi", "Tamatar-pyaaz salad"],
+        ["Jeera rice", "Pudina chutney", "Nariyal pani"]
       ],
       "Dinner": [
-        ["Vegetable stew", "Curd rice", "Mint chutney"],
-        ["Khichdi", "Bottle gourd curry", "Fruit slices"],
-        ["Clear soup", "Rice gruel", "Lassi"]
+        ["Vegetable stew", "Curd rice", "Pudina chutney"],
+        ["Khichdi", "Lauki curry", "Fruit chaat"],
+        ["Clear soup", "Congee", "Lassi"]
       ],
       "Snacks": [
-        ["Coconut water", "Orange slices", "Cucumber sticks"],
-        ["Buttermilk", "Watermelon cubes", "Lemon water"],
-        ["Papaya", "Pineapple", "Herbal hydration tea"]
+        ["Nariyal pani", "Orange", "Kheera sticks"],
+        ["Chaas", "Watermelon", "Nimbu pani"],
+        ["Papita", "Ananas", "Herbal tea"]
       ]
     }
   },
@@ -125,24 +125,24 @@ const mealData = {
     },
     meals: {
       "Breakfast": [
-        ["Besan chilla", "Mint chutney", "Green tea"],
-        ["Boiled eggs", "Avocado slices", "Black coffee"],
-        ["Tofu scramble", "Tomato salad", "Herbal tea"]
+        ["Besan chilla", "Pudina chutney", "Green tea"],
+        ["Uble hue ande", "Avocado", "Black coffee"],
+        ["Tofu bhurji", "Tamatar salad", "Herbal tea"]
       ],
       "Lunch": [
-        ["Grilled paneer", "Stir-fried vegetables", "Lettuce salad"],
-        ["Grilled fish", "Sauteed spinach", "Cabbage slaw"],
-        ["Chicken tikka", "Cauliflower rice", "Broccoli stir-fry"]
+        ["Grilled paneer", "Sauteed veggies", "Lettuce salad"],
+        ["Grilled fish", "Palak", "Patta gobhi salad"],
+        ["Chicken tikka", "Gobhi rice", "Broccoli sabzi"]
       ],
       "Dinner": [
-        ["Cauliflower rice", "Palak paneer", "Methi soup"],
-        ["Stuffed capsicum", "Tomato rasam", "Zucchini sabzi"],
-        ["Zoodles", "Paneer cubes", "Spinach soup"]
+        ["Gobhi rice", "Palak paneer", "Methi soup"],
+        ["Bharwa shimla mirch", "Tomato rasam", "Turai sabzi"],
+        ["Zucchini noodles", "Paneer cubes", "Palak soup"]
       ],
       "Snacks": [
-        ["Mixed nuts", "Cucumber sticks", "Green tea"],
-        ["Pumpkin seeds", "Coconut chunks", "Lemon juice"],
-        ["Avocado slices", "Roasted makhana", "Tulsi tea"]
+        ["Mixed nuts", "Kheera sticks", "Green tea"],
+        ["Kaddu ke beej", "Nariyal", "Nimbu pani"],
+        ["Avocado", "Roasted makhana", "Tulsi tea"]
       ]
     }
   },
@@ -159,24 +159,24 @@ const mealData = {
     },
     meals: {
       "Breakfast": [
-        ["Oats porridge with skimmed milk", "Apple slices", "Green tea"],
+        ["Oats porridge with toned milk", "Apple slices", "Green tea"],
         ["Vegetable idli", "Sambar (low oil)", "Herbal tea"],
-        ["Moong dal chilla", "Tomato chutney", "Lemon water"]
+        ["Moong dal chilla", "Tamatar chutney", "Nimbu pani"]
       ],
       "Lunch": [
-        ["Steamed brown rice", "Mixed vegetable curry (light oil)", "Cucumber salad"],
-        ["Chapati (no ghee)", "Lauki sabzi", "Tomato rasam"],
-        ["Vegetable pulao (minimal oil)", "Boiled moong dal", "Carrot sticks"]
+        ["Steamed brown rice", "Mix veg curry (light oil)", "Kakdi salad"],
+        ["Chapati (no ghee)", "Lauki ki sabzi", "Tomato rasam"],
+        ["Vegetable pulao (minimal oil)", "Boiled moong dal", "Gajar sticks"]
       ],
       "Dinner": [
-        ["Khichdi (low oil)", "Steamed vegetables", "Buttermilk"],
-        ["Grilled fish (no skin)", "Steamed broccoli", "Mint chutney"],
-        ["Vegetable soup", "Whole wheat roti (no oil)", "Fruit bowl"]
+        ["Khichdi (low oil)", "Steamed veggies", "Chaas"],
+        ["Grilled fish (no skin)", "Steamed broccoli", "Pudina chutney"],
+        ["Vegetable soup", "Chapati (no oil)", "Fruit chaat"]
       ],
       "Snacks": [
-        ["Roasted chana", "Fresh fruit", "Green tea"],
-        ["Low-fat yogurt", "Cucumber slices", "Herbal tea"],
-        ["Air-popped popcorn (no butter)", "Apple slices", "Lemon water"]
+        ["Bhuna chana", "Fresh fruits", "Green tea"],
+        ["Low-fat dahi", "Kheera slices", "Herbal tea"],
+        ["Air-popped popcorn (no butter)", "Apple slices", "Nimbu pani"]
       ]
     }
   },
@@ -194,23 +194,23 @@ const mealData = {
     meals: {
       "Breakfast": [
         ["White bread toast", "Scrambled eggs", "Black coffee"],
-        ["Semolina upma", "Coconut chutney", "Herbal tea"],
-        ["Poha (lightly cooked)", "Curd", "Apple juice"]
+        ["Suji upma", "Nariyal chutney", "Herbal tea"],
+        ["Poha (lightly cooked)", "Dahi", "Apple juice"]
       ],
       "Lunch": [
-        ["White rice", "Boiled chicken", "Carrot puree"],
-        ["Roti (refined flour)", "Paneer curry (low fiber)", "Cucumber slices"],
-        ["Pasta with creamy sauce", "Boiled vegetables", "Buttermilk"]
+        ["White rice", "Boiled chicken", "Gajar puree"],
+        ["Maida roti", "Paneer curry (low fiber)", "Kheera slices"],
+        ["Pasta with white sauce", "Boiled veggies", "Chaas"]
       ],
       "Dinner": [
-        ["Chicken broth soup", "Mashed potatoes", "Steamed zucchini"],
-        ["Boiled fish", "Rice noodles", "Cucumber salad"],
+        ["Chicken soup", "Mashed aloo", "Steamed zucchini"],
+        ["Boiled fish", "Rice noodles", "Kheera salad"],
         ["Egg custard", "White bread", "Fruit jelly"]
       ],
       "Snacks": [
-        ["Saltine crackers", "Boiled eggs", "Apple juice"],
-        ["Plain yogurt", "Banana", "Herbal tea"],
-        ["Cheese slices", "White bread toast", "Lemon water"]
+        ["Marie biscuit", "Uble hue ande", "Apple juice"],
+        ["Plain dahi", "Kela", "Herbal tea"],
+        ["Cheese slices", "White bread toast", "Nimbu pani"]
       ]
     }
   },
@@ -228,23 +228,23 @@ const mealData = {
     meals: {
       "Breakfast": [
         ["Fruit smoothie", "White bread toast", "Herbal tea"],
-        ["Vegetable upma", "Apple slices", "Lemon water"],
-        ["Rice flakes with milk", "Banana", "Green tea"]
+        ["Vegetable upma", "Apple slices", "Nimbu pani"],
+        ["Poha with milk", "Kela", "Green tea"]
       ],
       "Lunch": [
-        ["Steamed rice", "Vegetable curry", "Cucumber salad"],
-        ["Chapati", "Mixed vegetable sabzi", "Carrot sticks"],
-        ["Vegetable pulao", "Boiled potatoes", "Tomato soup"]
+        ["Steamed rice", "Vegetable curry", "Kakdi salad"],
+        ["Chapati", "Mix veg sabzi", "Gajar sticks"],
+        ["Vegetable pulao", "Boiled aloo", "Tamatar soup"]
       ],
       "Dinner": [
-        ["Vegetable stew", "White bread", "Fruit bowl"],
-        ["Khichdi (more rice, less dal)", "Boiled vegetables", "Curd"],
-        ["Mashed potatoes", "Steamed carrots", "Apple slices"]
+        ["Vegetable stew", "White bread", "Fruit chaat"],
+        ["Khichdi (more rice)", "Boiled veggies", "Dahi"],
+        ["Mashed aloo", "Steamed gajar", "Apple slices"]
       ],
       "Snacks": [
-        ["Fresh fruit", "Rice cakes", "Herbal tea"],
-        ["Vegetable sticks", "Apple slices", "Lemon water"],
-        ["Air-popped popcorn", "Fruit juice", "Cucumber sticks"]
+        ["Fresh fruits", "Rice cakes", "Herbal tea"],
+        ["Vegetable sticks", "Apple slices", "Nimbu pani"],
+        ["Air-popped popcorn", "Fruit juice", "Kheera sticks"]
       ]
     }
   },
@@ -261,24 +261,24 @@ const mealData = {
     },
     meals: {
       "Breakfast": [
-        ["Oats with banana", "Honey drizzle", "Cinnamon tea"],
-        ["Steamed idli", "Coriander chutney (no salt)", "Coconut water"],
-        ["Vegetable dalia", "Apple", "Lemon water"]
+        ["Oats with kela", "Shahad", "Dalchini chai"],
+        ["Steamed idli", "Dhania chutney (no salt)", "Nariyal pani"],
+        ["Vegetable dalia", "Seb", "Nimbu pani"]
       ],
       "Lunch": [
-        ["Steamed rice", "No-salt moong dal", "Steamed carrot-beans"],
-        ["Lauki sabzi", "Chapati (no salt)", "Beetroot salad"],
-        ["Khichdi", "Mint raita", "Guava"]
+        ["Steamed rice", "No-salt moong dal", "Steamed gajar-beans"],
+        ["Lauki ki sabzi", "Chapati (no salt)", "Chukandar salad"],
+        ["Khichdi", "Pudina raita", "Amrood"]
       ],
       "Dinner": [
-        ["Vegetable khichdi", "Bottle gourd curry", "Cucumber salad"],
-        ["Oats upma", "No-salt sambhar", "Pumpkin mash"],
-        ["Mixed veg stew", "Plain rice", "Fruit bowl"]
+        ["Vegetable khichdi", "Lauki curry", "Kakdi salad"],
+        ["Oats upma", "No-salt sambar", "Kaddu mash"],
+        ["Mix veg stew", "Plain rice", "Fruit chaat"]
       ],
       "Snacks": [
-        ["Unsalted popcorn", "Buttermilk", "Pineapple"],
-        ["Apple slices with peanut butter", "Mint tea", "Carrot sticks"],
-        ["Fruit chaat (no salt)", "Coconut water", "Foxnuts"]
+        ["Unsalted popcorn", "Chaas", "Ananas"],
+        ["Apple slices with mungfali butter", "Pudina chai", "Gajar sticks"],
+        ["Fruit chaat (no salt)", "Nariyal pani", "Makhana"]
       ]
     }
   },
@@ -295,24 +295,24 @@ const mealData = {
     },
     meals: {
       "Breakfast": [
-        ["Vegetable upma", "Boiled egg", "Tea without sugar"],
-        ["Tofu stir-fry", "Multigrain toast", "Cinnamon water"],
-        ["Sprouted moong salad", "Roasted peanuts", "Herbal tea"]
+        ["Vegetable upma", "Uble hue anda", "Chini-free chai"],
+        ["Tofu bhurji", "Multigrain toast", "Dalchini water"],
+        ["Sprouted moong", "Bhuna mungfali", "Herbal tea"]
       ],
       "Lunch": [
-        ["Bajra roti", "Tinda sabzi", "Cucumber salad"],
-        ["Masoor dal", "Lauki sabzi", "Ragi roti"],
-        ["Karela sabzi", "Mixed veg soup", "Chapati"]
+        ["Bajra roti", "Tinda ki sabzi", "Kakdi salad"],
+        ["Masoor dal", "Lauki ki sabzi", "Ragi roti"],
+        ["Karela sabzi", "Mix veg soup", "Chapati"]
       ],
       "Dinner": [
-        ["Vegetable soup", "Whole wheat roti", "Turai sabzi"],
-        ["Paneer tikka", "Spinach curry", "Zucchini mash"],
-        ["Boiled moong salad", "Tomato soup", "Stir-fried bhindi"]
+        ["Vegetable soup", "Chapati", "Turai ki sabzi"],
+        ["Paneer tikka", "Palak curry", "Zucchini mash"],
+        ["Boiled moong salad", "Tamatar soup", "Bhindi sabzi"]
       ],
       "Snacks": [
-        ["Roasted makhana", "Unsweetened buttermilk", "Guava"],
-        ["Roasted almonds", "Green tea", "Cucumber sticks"],
-        ["Papaya cubes", "Herbal water", "Flaxseeds"]
+        ["Roasted makhana", "Unsweetened chaas", "Amrood"],
+        ["Bhuna badam", "Green tea", "Kheera sticks"],
+        ["Papita cubes", "Herbal water", "Alsi seeds"]
       ]
     }
   }
